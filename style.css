@@ -1,0 +1,1672 @@
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #fff7fa;
+    color: #49363d;
+    overflow-x: hidden;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+    --pink: #e88ca9;
+    --dark-pink: #c85f82;
+    --light-pink: #fce1e9;
+    --soft-pink: #fff0f4;
+    --cream: #fffaf7;
+    --text: #49363d;
+    --muted: #92777f;
+    --white: #ffffff;
+
+    --serif: "Playfair Display", serif;
+}
+
+
+/* =========================================
+   PETALS
+========================================= */
+
+.petals span {
+    position: fixed;
+    z-index: 5;
+    pointer-events: none;
+    font-size: 18px;
+    opacity: 0.35;
+    animation: floating 8s ease-in-out infinite;
+}
+
+.petals span:nth-child(1) {
+    top: 15%;
+    left: 8%;
+}
+
+.petals span:nth-child(2) {
+    top: 30%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.petals span:nth-child(3) {
+    top: 60%;
+    left: 5%;
+    animation-delay: 4s;
+}
+
+.petals span:nth-child(4) {
+    top: 75%;
+    right: 6%;
+    animation-delay: 1s;
+}
+
+.petals span:nth-child(5) {
+    top: 45%;
+    left: 92%;
+    animation-delay: 3s;
+}
+
+.petals span:nth-child(6) {
+    top: 85%;
+    left: 15%;
+    animation-delay: 5s;
+}
+
+@keyframes floating {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(15deg);
+    }
+}
+
+
+/* =========================================
+   OPENING
+========================================= */
+
+.opening {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffffff 0, transparent 25%),
+        radial-gradient(circle at 80% 80%, #f8d6e1 0, transparent 30%),
+        linear-gradient(135deg, #fff5f8, #f8d9e3);
+}
+
+.opening::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border: 1px solid rgba(200, 95, 130, 0.15);
+
+    border-radius: 50%;
+
+    top: -250px;
+    right: -200px;
+}
+
+.opening::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border: 1px solid rgba(200, 95, 130, 0.12);
+
+    border-radius: 50%;
+
+    bottom: -200px;
+    left: -150px;
+}
+
+.opening-content {
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+
+    animation: openingIn 1.2s ease;
+}
+
+@keyframes openingIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.small-title {
+    letter-spacing: 5px;
+    font-size: 11px;
+
+    color: var(--dark-pink);
+
+    margin-bottom: 25px;
+}
+
+.ring {
+    width: 105px;
+    height: 105px;
+
+    margin: auto;
+    margin-bottom: 20px;
+
+    border: 1px solid var(--pink);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.ring::before {
+    content: "";
+
+    position: absolute;
+
+    width: 85px;
+    height: 85px;
+
+    border: 1px solid rgba(200, 95, 130, 0.25);
+
+    border-radius: 50%;
+}
+
+.ring span {
+    font-family: var(--serif);
+
+    font-size: 38px;
+
+    color: var(--dark-pink);
+}
+
+.opening h1 {
+    font-family: var(--serif);
+
+    font-size: clamp(55px, 10vw, 100px);
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    color: #5c3d47;
+
+    line-height: 1;
+}
+
+.sweet {
+    font-family: var(--serif);
+
+    font-size: 22px;
+
+    color: var(--dark-pink);
+
+    margin-top: 10px;
+}
+
+.date-opening {
+    margin-top: 18px;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    color: var(--muted);
+}
+
+.open-btn {
+    margin-top: 35px;
+
+    padding: 14px 27px;
+
+    border: 1px solid var(--dark-pink);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.4);
+
+    color: var(--dark-pink);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.open-btn span {
+    margin-left: 8px;
+}
+
+.open-btn:hover {
+    background: var(--dark-pink);
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+.opening-flower {
+    position: absolute;
+
+    font-size: 100px;
+
+    opacity: 0.25;
+}
+
+.flower-left {
+    left: 5%;
+    bottom: 10%;
+
+    transform: rotate(-20deg);
+}
+
+.flower-right {
+    right: 5%;
+    top: 12%;
+
+    transform: rotate(20deg);
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+#mainContent {
+    display: none;
+}
+
+#mainContent.visible {
+    display: block;
+}
+
+.section {
+    padding: 110px 20px;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    position: relative;
+}
+
+.eyebrow {
+    color: var(--dark-pink);
+
+    letter-spacing: 4px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    margin-bottom: 18px;
+}
+
+.section h2 {
+    font-family: var(--serif);
+
+    font-size: clamp(38px, 6vw, 65px);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    color: #523942;
+}
+
+.section h2 i {
+    color: var(--dark-pink);
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    text-align: center;
+
+    min-height: 850px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.hero h2 span {
+    color: var(--dark-pink);
+
+    font-style: italic;
+}
+
+.hero-text {
+    max-width: 550px;
+
+    margin: 25px auto 40px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+.photo-frame {
+    width: min(330px, 80vw);
+
+    height: 430px;
+
+    padding: 10px;
+
+    background: white;
+
+    box-shadow:
+        0 20px 60px rgba(120, 50, 70, 0.12);
+
+    transform: rotate(-2deg);
+
+    transition: 0.5s;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.photo-inner {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #f5dce4;
+}
+
+.photo-inner img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.placeholder-content {
+    position: absolute;
+
+    inset: 0;
+
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: var(--dark-pink);
+}
+
+.photo-placeholder .placeholder-content {
+    display: flex;
+}
+
+.placeholder-content span {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+.placeholder-content p {
+    font-family: var(--serif);
+
+    font-size: 24px;
+}
+
+.placeholder-content small {
+    margin-top: 5px;
+
+    color: var(--muted);
+}
+
+.scroll-down {
+    margin-top: 50px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.scroll-down div {
+    margin-top: 10px;
+
+    font-size: 20px;
+
+    animation: arrow 1.5s infinite;
+}
+
+@keyframes arrow {
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+.hero-decoration {
+    position: absolute;
+
+    font-size: 100px;
+
+    opacity: 0.15;
+}
+
+.top-left {
+    left: 0;
+    top: 100px;
+}
+
+.bottom-right {
+    right: 0;
+    bottom: 100px;
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.details {
+    text-align: center;
+}
+
+.details-grid {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.detail-card {
+    background: white;
+
+    padding: 35px 20px;
+
+    border: 1px solid #f2dce3;
+
+    transition: 0.3s;
+}
+
+.detail-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(120, 50, 70, 0.08);
+}
+
+.detail-icon {
+    font-size: 30px;
+
+    color: var(--dark-pink);
+
+    margin-bottom: 18px;
+}
+
+.detail-card span {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--muted);
+
+    margin-bottom: 8px;
+}
+
+.detail-card strong {
+    font-family: var(--serif);
+
+    font-size: 17px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.countdown-section {
+    text-align: center;
+
+    background: var(--soft-pink);
+
+    max-width: none;
+
+    padding-left: 20px;
+
+    padding-right: 20px;
+}
+
+.countdown {
+    max-width: 750px;
+
+    margin: 50px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.count-box {
+    background: rgba(255, 255, 255, 0.8);
+
+    padding: 25px 10px;
+
+    border: 1px solid rgba(200, 95, 130, 0.15);
+}
+
+.count-box strong {
+    display: block;
+
+    font-family: var(--serif);
+
+    font-size: 38px;
+
+    color: var(--dark-pink);
+}
+
+.count-box span {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+    text-align: center;
+}
+
+.flower-border {
+    margin-bottom: 35px;
+
+    letter-spacing: 15px;
+
+    opacity: 0.7;
+}
+
+.message-card {
+    max-width: 700px;
+
+    margin: 45px auto 0;
+
+    padding: 55px 45px;
+
+    background: white;
+
+    border: 1px solid #f0dce3;
+
+    box-shadow:
+        0 20px 60px rgba(120, 50, 70, 0.07);
+
+    position: relative;
+}
+
+.quote-mark {
+    font-family: var(--serif);
+
+    font-size: 70px;
+
+    color: var(--light-pink);
+
+    position: absolute;
+
+    top: 10px;
+
+    left: 25px;
+}
+
+.message-card p {
+    line-height: 1.9;
+
+    color: var(--muted);
+
+    margin-bottom: 20px;
+}
+
+.signature {
+    margin-top: 35px;
+
+    font-family: var(--serif);
+
+    font-style: italic;
+
+    color: var(--muted);
+}
+
+.signature strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 22px;
+
+    color: var(--dark-pink);
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.location {
+    text-align: center;
+
+    background: #fff1f5;
+
+    max-width: none;
+}
+
+.location-card {
+    max-width: 500px;
+
+    margin: 45px auto 0;
+
+    background: white;
+
+    padding: 50px 30px;
+
+    box-shadow:
+        0 15px 50px rgba(120, 50, 70, 0.07);
+}
+
+.location-icon {
+    font-size: 40px;
+
+    color: var(--dark-pink);
+}
+
+.location-card h3 {
+    font-family: var(--serif);
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    margin: 15px 0;
+}
+
+.location-card p {
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+.maps-btn,
+.rsvp-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    background: var(--dark-pink);
+
+    color: white;
+
+    font-size: 12px;
+
+    transition: 0.3s;
+}
+
+.maps-btn:hover,
+.rsvp-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(200, 95, 130, 0.25);
+}
+
+
+/* =========================================
+   RSVP
+========================================= */
+
+.rsvp {
+    text-align: center;
+
+    padding-top: 130px;
+
+    padding-bottom: 130px;
+}
+
+.rsvp-decoration {
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    opacity: 0.7;
+}
+
+.rsvp > p:not(.eyebrow) {
+    max-width: 500px;
+
+    margin: 25px auto;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 70px 20px;
+
+    text-align: center;
+
+    background: #f5d6e0;
+}
+
+.footer-flower {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+footer h3 {
+    font-family: var(--serif);
+
+    font-size: 32px;
+
+    font-style: italic;
+
+    font-weight: 500;
+}
+
+footer p {
+    color: var(--dark-pink);
+
+    margin-top: 5px;
+}
+
+.footer-line {
+    width: 50px;
+
+    height: 1px;
+
+    background: var(--dark-pink);
+
+    margin: 25px auto;
+}
+
+footer small {
+    color: var(--muted);
+}
+
+
+/* =========================================
+   MUSIC BUTTON
+========================================= */
+
+.music-btn {
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(200, 95, 130, 0.3);
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: var(--dark-pink);
+
+    cursor: pointer;
+
+    z-index: 100;
+
+    box-shadow:
+        0 5px 20px rgba(100, 40, 60, 0.1);
+
+    transition: 0.3s;
+}
+
+.music-btn:hover {
+    transform: scale(1.08);
+}
+
+.music-btn.playing {
+    animation: musicPulse 1s infinite;
+}
+
+@keyframes musicPulse {
+    50% {
+        box-shadow:
+            0 0 0 8px rgba(200, 95, 130, 0.08);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .section {
+        padding: 85px 20px;
+    }
+
+    .opening-flower {
+        font-size: 65px;
+    }
+
+    .opening h1 {
+        font-size: 65px;
+    }
+
+    .hero {
+        min-height: 750px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 350px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .countdown {
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 350px;
+    }
+
+    .message-card {
+        padding: 50px 25px;
+    }
+
+    .photo-frame {
+        height: 390px;
+    }
+
+    .petals span {
+        font-size: 13px;
+    }
+}
+/* =========================================
+   FEDERIKA — FLORAL MEMORY GALLERY
+========================================= */
+
+.gallery-intro {
+    position: relative;
+    padding: 100px 24px 45px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.gallery-heading {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.gallery-eyebrow,
+.memory-label {
+    display: block;
+    color: #bd7890;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.gallery-heading h2 {
+    color: #684451;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 18px;
+}
+
+.gallery-heading h2 em {
+    color: #cc829c;
+    font-weight: 400;
+}
+
+.gallery-heading p {
+    max-width: 430px;
+    margin: 0 auto;
+    color: #92777f;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.gallery-flower {
+    display: block;
+    margin-top: 24px;
+    color: #d99ab0;
+    font-size: 30px;
+}
+
+/* Each photo occupies its own scroll section */
+
+.memory-layer {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 24px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 10% 20%,
+            rgba(248, 215, 226, 0.4),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 90% 80%,
+            rgba(255, 237, 241, 0.8),
+            transparent 45%
+        );
+}
+
+.memory-layer:nth-of-type(even) {
+    background-color: #fffaf8;
+}
+
+.memory-inner {
+    position: relative;
+    width: 100%;
+    max-width: 920px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    align-items: center;
+    gap: clamp(30px, 7vw, 85px);
+}
+
+.memory-reverse {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+}
+
+.memory-reverse .memory-photo-frame {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.memory-reverse .memory-caption {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+}
+
+.memory-number {
+    position: absolute;
+    top: -32px;
+    left: 0;
+    color: #bd7890;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.memory-reverse .memory-number {
+    left: auto;
+    right: 0;
+}
+
+.memory-number span {
+    color: #c7afb6;
+    font-size: 11px;
+}
+
+/* Floral photo frame */
+
+.memory-photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 410px;
+    justify-self: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #f0d5df;
+    box-shadow:
+        0 20px 55px rgba(137, 81, 101, 0.12),
+        0 3px 10px rgba(137, 81, 101, 0.06);
+}
+
+.frame-one {
+    transform: rotate(-2deg);
+    border-radius: 150px 150px 5px 5px;
+}
+
+.frame-two {
+    transform: rotate(2deg);
+    border-radius: 5px;
+}
+
+.frame-three {
+    transform: rotate(1.5deg);
+    border-radius: 150px 150px 5px 5px;
+}
+
+.frame-four {
+    transform: rotate(-1.5deg);
+    border-radius: 5px;
+}
+
+.memory-photo-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    background: #f8e9ed;
+    cursor: zoom-in;
+}
+
+.memory-photo-button img {
+    display: block;
+    width: 100%;
+    height: clamp(320px, 43vw, 480px);
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.memory-photo-button:hover img {
+    transform: scale(1.045);
+}
+
+.frame-one .memory-photo-button {
+    border-radius: 140px 140px 2px 2px;
+}
+
+.frame-three .memory-photo-button {
+    border-radius: 140px 140px 2px 2px;
+}
+
+.memory-deco {
+    position: absolute;
+    z-index: 2;
+    color: #c9809a;
+    font-size: 42px;
+    pointer-events: none;
+    text-shadow: 0 3px 10px rgba(255, 255, 255, 0.8);
+}
+
+.deco-top {
+    top: -24px;
+    right: -18px;
+}
+
+.deco-side {
+    bottom: 24px;
+    left: -25px;
+    font-size: 38px;
+}
+
+.memory-stamp {
+    position: absolute;
+    z-index: 3;
+    right: -18px;
+    bottom: 22px;
+    display: grid;
+    place-items: center;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 8px;
+    color: #fff;
+    background: #cf8ba2;
+    border: 3px solid #fffaf8;
+    border-radius: 50%;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 15px;
+    box-shadow: 0 5px 15px rgba(137, 81, 101, 0.18);
+}
+
+/* Captions */
+
+.memory-caption {
+    max-width: 330px;
+    justify-self: center;
+}
+
+.memory-caption .memory-label {
+    margin-bottom: 14px;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+}
+
+.memory-caption h3 {
+    margin: 0 0 16px;
+    color: #684451;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(27px, 3.7vw, 41px);
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.memory-caption p {
+    margin: 0;
+    color: #92777f;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* Full-screen photo viewer */
+
+.memory-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 60px 20px 30px;
+    background: rgba(47, 29, 37, 0.94);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.memory-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.memory-lightbox > img {
+    display: block;
+    max-width: min(90vw, 650px);
+    max-height: 75vh;
+    object-fit: contain;
+    border: 8px solid #fffaf8;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.25);
+}
+
+.memory-lightbox > p {
+    margin: 0;
+    color: #fff0f4;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 22px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+    .gallery-intro {
+        padding: 75px 24px 25px;
+    }
+
+    .memory-layer {
+        min-height: auto;
+        padding: 70px 26px 85px;
+    }
+
+    .memory-inner,
+    .memory-reverse {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .memory-photo-frame,
+    .memory-reverse .memory-photo-frame {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .memory-caption,
+    .memory-reverse .memory-caption {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+        max-width: 310px;
+    }
+
+    .memory-number,
+    .memory-reverse .memory-number {
+        top: -32px;
+        left: 0;
+        right: auto;
+    }
+
+    .memory-photo-button img {
+        height: min(112vw, 440px);
+    }
+
+    .memory-caption h3 {
+        font-size: 32px;
+    }
+
+    .deco-top {
+        right: -12px;
+    }
+
+    .deco-side {
+        left: -14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .memory-photo-button img,
+    .memory-lightbox {
+        transition: none;
+    }
+}
+
+/* =========================================
+   FIX GALLERY — SWEET SEVENTEEN FEDERIKA
+   Setiap foto punya section sendiri
+========================================= */
+
+/* Pembuka galeri */
+#memoryGallery.gallery-intro {
+    max-width: none;
+    min-height: 48vh;
+    padding: 100px 24px 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(180deg, #fff7fa, #fff0f4);
+}
+
+#memoryGallery h2 {
+    max-width: 750px;
+    margin: 0 auto 20px;
+    font-size: clamp(32px, 5vw, 52px);
+}
+
+#memoryGallery > p:not(.eyebrow) {
+    max-width: 470px;
+    margin: 0 auto;
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+/* Setiap foto menjadi satu bagian besar */
+.memory-layer {
+    width: 100%;
+    max-width: none;
+    min-height: 90vh;
+    padding: 90px 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 12% 20%,
+            rgba(248, 215, 226, 0.5),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #fffaf8, #fff2f6);
+}
+
+/* Warna latar bergantian secara halus */
+.memory-layer:nth-of-type(even) {
+    background:
+        radial-gradient(
+            circle at 88% 75%,
+            rgba(248, 215, 226, 0.5),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #fff2f6, #fffaf8);
+}
+
+/* Foto dan tulisan tersusun rapi */
+.memory-inner,
+.memory-inner.memory-reverse {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    align-items: center;
+    gap: clamp(35px, 7vw, 90px);
+}
+
+/* Foto dan caption berganti sisi */
+.memory-inner.memory-reverse .memory-photo-frame {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.memory-inner.memory-reverse .memory-caption {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+}
+
+/* Bingkai foto */
+.memory-photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 390px;
+    justify-self: center;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #efd5df;
+    box-shadow:
+        0 25px 65px rgba(120, 50, 70, 0.13),
+        0 5px 15px rgba(120, 50, 70, 0.06);
+}
+
+.frame-one {
+    border-radius: 180px 180px 4px 4px;
+    transform: rotate(-2deg);
+}
+
+.frame-two {
+    border-radius: 4px;
+    transform: rotate(2deg);
+}
+
+.frame-three {
+    border-radius: 180px 180px 4px 4px;
+    transform: rotate(1.5deg);
+}
+
+.frame-four {
+    border-radius: 4px;
+    transform: rotate(-1.5deg);
+}
+
+/* Tombol pembuka foto */
+.memory-photo-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    background: #f8e9ed;
+    cursor: zoom-in;
+}
+
+.memory-photo-button img {
+    display: block;
+    width: 100%;
+    height: clamp(340px, 42vw, 490px);
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.frame-one .memory-photo-button,
+.frame-three .memory-photo-button {
+    border-radius: 170px 170px 2px 2px;
+}
+
+.memory-photo-button:hover img {
+    transform: scale(1.035);
+}
+
+/* Nomor foto */
+.memory-stamp {
+    position: absolute;
+    z-index: 2;
+    right: -17px;
+    bottom: 22px;
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background: #cf8ba2;
+    color: #fff;
+    font-family: var(--serif);
+    font-size: 15px;
+    box-shadow: 0 5px 15px rgba(120, 50, 70, 0.15);
+}
+
+/* Teks pendamping foto */
+.memory-caption {
+    max-width: 360px;
+    justify-self: center;
+}
+
+.memory-kicker {
+    display: block;
+    margin-bottom: 17px;
+    color: var(--dark-pink);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.memory-caption h2 {
+    margin: 0 0 18px;
+    color: #684451;
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.memory-caption h2 i {
+    color: var(--dark-pink);
+}
+
+.memory-caption p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* Foto dapat diperbesar tanpa merusak layout */
+.memory-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 60px 20px 30px;
+    background: rgba(47, 29, 37, 0.94);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.memory-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.memory-lightbox .lightbox-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 100%;
+}
+
+.memory-lightbox .lightbox-content img {
+    display: block;
+    max-width: min(88vw, 650px);
+    max-height: 72vh;
+    object-fit: contain;
+    border: 7px solid #fffaf8;
+}
+
+.memory-lightbox .lightbox-content p {
+    margin: 0;
+    color: #fff0f4;
+    font-family: var(--serif);
+    font-size: 20px;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 22px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Tampilan HP */
+@media (max-width: 700px) {
+    #memoryGallery.gallery-intro {
+        min-height: auto;
+        padding: 75px 24px 45px;
+    }
+
+    .memory-layer {
+        min-height: 0;
+        padding: 85px 26px;
+    }
+
+    .memory-inner,
+    .memory-inner.memory-reverse {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .memory-inner .memory-photo-frame,
+    .memory-inner.memory-reverse .memory-photo-frame {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .memory-inner .memory-caption,
+    .memory-inner.memory-reverse .memory-caption {
+        grid-column: 1;
+        grid-row: 2;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .memory-photo-button img {
+        height: min(115vw, 430px);
+    }
+
+    .memory-caption h2 {
+        font-size: clamp(31px, 8vw, 40px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .memory-photo-button img,
+    .memory-lightbox {
+        transition: none;
+    }
+}
